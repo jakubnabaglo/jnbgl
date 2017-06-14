@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Jakub Nabaglo</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.png') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div id="intro">
+      <p>Hello, my name is Jakub Nabaglo. For breakfast, I eat yoghurt and interesting problems. You can email me at <a href="mailto:j@nab.gl">j@nab.gl</a>.</p>
+    </div>
+
+    <img id="drawing" src="{{ url_for('static', filename='drawing.png') }}" alt="Drawing of smiling man in stripy grey shirt in a blurry cafe." />
+
+    <ul id="sections">
+      <li><a href="https://github.com/nbgl">GitHub</a></li>
+      <li><a href="{{ url_for('static', filename='cv.pdf') }}">CV</a></li>
+      <li><a href="{{ url_for('projects') }}">Projects</a></li>
+    </ul>
+  </body>
+</html>
