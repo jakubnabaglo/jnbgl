@@ -12,6 +12,7 @@ def force_ssl():
 
 @app.route('/')
 def home():
+    raise Exception()
     return 'Hello there.'
 
 
