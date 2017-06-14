@@ -4,7 +4,7 @@ app = flask.Flask(__name__)
 
 @app.before_request
 def force_ssl():
-    if flask.request.headers['x-forwarded-proto'] != 'https':
+    if flask.request.headers['X-Forwarded-Proto'] != 'https':
         flask.redirect('https://{}{}'.format(
             flask.request.headers['host'],
             flask.request.path))
