@@ -4,15 +4,14 @@ app = flask.Flask(__name__)
 
 @app.before_request
 def force_ssl():
-    if flask.request.header['x-forwarded-proto'] != 'https':
+    if flask.request.headers['x-forwarded-proto'] != 'https':
         flask.redirect('https://{}{}'.format(
-            flask.request.header['host'],
+            flask.request.headers['host'],
             flask.request.path))
 
 
 @app.route('/')
 def home():
-    raise Exception()
     return 'Hello there.'
 
 
