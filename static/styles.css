@@ -1,8 +1,23 @@
+@-webkit-keyframes infrot {
+    from {
+        -webkit-transform: rotate(15deg);
+    }
+    to {
+        -webkit-transform: rotate(375deg);
+    }
+}
+
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     width: 800px;
-    margin: 100px auto;
+    margin: 0 auto;
+    position: relative;
+}
+
+#content {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 100px 0 0 0;
     text-align: center;
+    position: relative;
 }
 
 a {
@@ -15,12 +30,12 @@ p {
     display: block;
 }
 
-ul#sections {
+#sections {
     margin: 30px 0 0 0;
     padding: 0;
 }
 
-ul#sections > li {
+#sections > li {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -28,6 +43,57 @@ ul#sections > li {
     width: 100px;
 }
 
-img#drawing {
+#drawing {
     border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    background-image: url('tcr.jpg');
+    background-size: 100% 100%;
+    display: inline-block;
+    padding: 0;
+}
+#drawing > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: rotate(15deg);
+    background-image: url('outline.svg');
+    animation: infrot 300s infinite linear;
+}
+
+#home {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    top: -80px;
+}
+
+a.project-tile {
+    display: block;
+    color: black;
+    width: 250px;
+    height: 310px;
+    position: absolute;
+}
+
+a.project-tile > img {
+    border-radius: 50%;
+}
+
+a.project-tile-row1 {
+    top: 50px;
+}
+
+a.project-tile-col1 {
+    left: 100px;
+}
+
+a.project-tile-col2 {
+    left: 450px;
+}
+
+.animpaused {
+    animation-play-state: paused !important;
 }

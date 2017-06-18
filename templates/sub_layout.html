@@ -1,0 +1,7 @@
+{% extends 'main_layout.html' %}
+
+{% block starthook %}
+  <a href="{{ url_for('home') }}">
+    <img src="{{ url_for('static', filename='drawing.png') }}" alt="Home" id="home" />
+  </a>
+{% endblock %}

@@ -1,0 +1,41 @@
+<!doctype html>
+
+<head>
+  <title>AIXI</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylehutter.css') }}">
+  <script type="text/javascript">
+    var clickCounter = 0;
+    var hutterClicked = function(el) {
+      var text;
+      switch (clickCounter++) {
+        case 0:
+          text = 'Aixi.';
+          break;
+        case 1:
+          text = 'Aixi?';
+          break;
+        case 2:
+          text = 'Aixi!';
+          break;
+        case 3:
+          text = 'Nice meme website website website website website website website website website website website website!';
+          break;
+        case 4:
+          el.classList.add('creepy');
+          return;
+        case 5:
+          window.close();
+          return;
+        default:
+          return;
+      }
+
+      var msg = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(msg);
+    };
+  </script>
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='hutter.jpg') }}" onclick="hutterClicked(this)" />
+</body>
